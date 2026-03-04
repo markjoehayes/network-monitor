@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: network_monitor
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    privileged: true  # Needed for packet capture
+    network_mode: "host"  # To capture host network traffic
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgresql://admin:admin123@localhost:5432/network_monitor
+    volumes:
+      - ./:/app
+    command: python capture/packet_capture.py
+
+volumes:
+  postgres_data:
