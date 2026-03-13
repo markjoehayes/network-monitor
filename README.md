@@ -24,7 +24,7 @@ A real-time network traffic monitoring system that captures, analyzes, and visua
 - **Docker** - Containerized database
 
 ## Project Structure
-
+```bash
 network-monitor/
 ├── capture/
 │ ├── init.py
@@ -45,7 +45,7 @@ network-monitor/
 ├── run_capture.sh # Script to start packet capture
 ├── run_dashboard.sh # Script to start web dashboard
 └── README.md 
-
+```
 
 ## Prerequisites
 
