@@ -6,12 +6,12 @@ A real-time network traffic monitoring system that captures, analyzes, and visua
 
 ## Features
 
-- 📊 **Real-time packet capture** - Monitor network traffic as it happens
-- 📈 **Live dashboard** - Auto-refreshing web interface with charts and tables
-- 🔝 **Top talkers** - See which IP addresses are using the most bandwidth
-- 📊 **Protocol distribution** - Visual breakdown of TCP/UDP/other traffic
-- 💾 **Data persistence** - All traffic logged to PostgreSQL database
-- 🐳 **Docker support** - Easy database deployment with Docker Compose
+- **Real-time packet capture** - Monitor network traffic as it happens
+- **Live dashboard** - Auto-refreshing web interface with charts and tables
+- **Top talkers** - See which IP addresses are using the most bandwidth
+- **Protocol distribution** - Visual breakdown of TCP/UDP/other traffic
+- **Data persistence** - All traffic logged to PostgreSQL database
+- **Docker support** - Easy database deployment with Docker Compose
 
 ## Tech Stack
 
