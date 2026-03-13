@@ -15,7 +15,7 @@ A real-time network traffic monitoring system that captures, analyzes, and visua
 
 ## Tech Stack
 
-- **Python 3.14+** - Core language
+- **Python** 3.14+** - Core language
 - **Scapy** - Packet capture and analysis
 - **PostgreSQL** - Data storage
 - **SQLAlchemy** - Database ORM
