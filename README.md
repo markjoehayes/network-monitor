@@ -139,9 +139,82 @@ source .venv/bin/activate
 Open your browser and navigate to http://localhost:5000
 
 ## Usage
+
 - The dashboard auto-refreshed every 5 seconds
 - **Top Talkers** table shows IPs with highest traffic
 - **Protocol Distribution** pie chart shows traffic types
 - **Traffic Volume** bar chart shows bandwidth usage by IP
 - Packet capture runs continuously, storing data in PostgresSQL
 
+# Troubleshooting
+
+## Permission Issues with Docker
+```bash
+
+# if you get "permission denied" for docker.sock
+sudo usermod -aG docker $USER
+# Log out and back in
+```
+
+## Packet Capture Shows No Traffic
+
+```bash
+
+# List your network intefaces
+ip link show
+
+# Capture on specific interface
+./run_capture.sh --interface wlan0 # for WiFi
+./run_capture.sh --interface eth0  # for Ethernet
+```
+
+## Module Import Errors
+
+If python can't find local modules
+
+```bash
+# Set PYTHONPATH
+export PYTHONPATH=/path/to/network-monitor
+# or run scripts from project root
+```
+
+## Database Connection Issues
+
+```bash
+# Check if PostgresSQL is running
+docker-compose ps
+
+# View database logs
+docker-compose logs postgres
+
+# Test database connection
+python -c "from database.db_manager import DatabaseManager; db=DatabaseManager(); print('DB OK')"
+```
+
+# ROADMAP
+
+ - Historical data views with date picker
+
+ - Email alerts for unusual traffic
+
+ - DNS query tracking
+
+ - Geolocation mapping of external IPs
+
+ -  Bandwidth graphs over time
+
+ -  Port/protocol filtering
+
+ -  User authentication
+
+ -  PCAP export functionality
+
+ -  Anomaly detection
+
+ -  Mobile-responsive design
+
+# Contact
+
+Mark Hayes markjoehayes@proton.me
+
+Project Link: https://github.com/yourusername/network-monitor
